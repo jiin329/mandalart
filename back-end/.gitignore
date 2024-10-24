@@ -37,17 +37,17 @@ out/
 .vscode/
 
 # Node.js dependencies (frontend 관련)
-frontend/node_modules/
-frontend/dist/
+front-end/node_modules/
+front-end/dist/
 
 # Java/Spring dependencies (backend 관련)
-backend/target/
-backend/.gradle/
-backend/.idea/
-backend/.project
-backend/.classpath
-backend/*.iml
-backend/.settings/
+back-end/target/
+back-end/.gradle/
+back-end/.idea/
+back-end/.project
+back-end/.classpath
+back-end/*.iml
+back-end/.settings/
 
 
 ### Java ###
