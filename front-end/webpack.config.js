@@ -9,6 +9,12 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"), // src 폴더를 @로 설정
+    },
+    extensions: [".js", ".jsx", ".ts", ".tsx"], // 확장자 설정
+  },
   module: {
     rules: [
       {
