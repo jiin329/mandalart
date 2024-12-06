@@ -36,6 +36,10 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        type: "asset/resource", // Webpack 5에서는 asset/resource로 설정
+      },
     ],
   },
   devServer: {

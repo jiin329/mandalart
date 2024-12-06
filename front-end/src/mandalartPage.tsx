@@ -30,9 +30,8 @@ const MandalartPage: React.FC = () => {
       <MainGrid>
         {grids.map((cells, gridIndex) => {
           return (
-            <Grid>
+            <Grid key={"grid_" + gridIndex}>
               <MandalartGrid
-                key={"grid_" + gridIndex}
                 cells={cells}
                 onCellChange={(cellIndex: number, value: string) =>
                   handleCellChange(gridIndex, cellIndex, value)
