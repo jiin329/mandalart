@@ -36,7 +36,7 @@ const MandalartGrid: React.FC<MandalartGridProps> = ({
 const Cell = styled.input<{ theme: any }>`
   display: flex;
   border: 1px solid #d1d1d1;
-  font-size: 14px;
+  font-size: calc(0.3rem + 1vw);
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -46,6 +46,10 @@ const Cell = styled.input<{ theme: any }>`
   width: 100%; /* input이 grid에 맞게 늘어나도록 설정 */
   height: 100%; /* input이 grid에 맞게 늘어나도록 설정 */
   box-sizing: border-box; /* 패딩과 보더가 포함된 너비 및 높이 계산 */
+  overflow: hidden;
+  word-wrap: ellipsis;
+  white-space: nowrap;
+  padding: 10px;
 
   &:focus {
     border-color: #6a98b8;

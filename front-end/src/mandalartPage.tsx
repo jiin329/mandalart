@@ -25,28 +25,38 @@ const MandalartPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>test</h1>
-      <MainGrid>
-        {grids.map((cells, gridIndex) => {
-          return (
-            <Grid key={"grid_" + gridIndex}>
-              <MandalartGrid
-                cells={cells}
-                onCellChange={(cellIndex: number, value: string) =>
-                  handleCellChange(gridIndex, cellIndex, value)
-                }
-              />
-            </Grid>
-          );
-        })}
-      </MainGrid>
-    </div>
+    <MainContent>
+      <div>
+        <h1>test</h1>
+        <MainGrid>
+          {grids.map((cells, gridIndex) => {
+            return (
+              <Grid key={"grid_" + gridIndex}>
+                <MandalartGrid
+                  cells={cells}
+                  onCellChange={(cellIndex: number, value: string) =>
+                    handleCellChange(gridIndex, cellIndex, value)
+                  }
+                />
+              </Grid>
+            );
+          })}
+        </MainGrid>
+      </div>
+    </MainContent>
   );
 };
 
+const MainContent = styled.div`
+  margin: 20px; /* 원하는 공백 크기로 조정 */
+  padding: 10px; /* 필요 시 내부 여백 추가 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함 */
+  justify-items: center;
+`;
+
 const MainGrid = styled.div`
   display: grid;
+  max-width: 1000px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;

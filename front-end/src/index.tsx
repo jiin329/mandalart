@@ -69,7 +69,4 @@ root.render(<App />);
 
 const MainContainer = styled.div`
   background-color: #f5f5f5; /* 전체 배경색 */
-  margin: 20px; /* 원하는 공백 크기로 조정 */
-  padding: 10px; /* 필요 시 내부 여백 추가 */
-  box-sizing: border-box; /* 패딩과 테두리를 포함 */
 `;
