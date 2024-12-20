@@ -20,7 +20,7 @@ const MandalartGrid: React.FC<MandalartGridProps> = ({
         <CellComponent
           key={"cell_" + index}
           value={cell}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
             onCellChange(index, e.target.value)
           }
           placeholder={
@@ -33,23 +33,27 @@ const MandalartGrid: React.FC<MandalartGridProps> = ({
   </>
 );
 
-const Cell = styled.input<{ theme: any }>`
-  display: flex;
-  border: 1px solid #d1d1d1;
-  font-size: calc(0.3rem + 1vw);
-  text-align: center;
-  align-items: center;
+const Cell = styled.textarea<{ theme: any }>`
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  border: 1px solid #d1d1d1;
+  font-size: calc(0.2rem + 1vw);
+  text-align: center; /* 가로 중앙 정렬 */
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
   aspect-ratio: 1;
-  width: 100%; /* input이 grid에 맞게 늘어나도록 설정 */
-  height: 100%; /* input이 grid에 맞게 늘어나도록 설정 */
-  box-sizing: border-box; /* 패딩과 보더가 포함된 너비 및 높이 계산 */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
   overflow: hidden;
-  word-wrap: ellipsis;
-  white-space: nowrap;
   padding: 10px;
+  resize: none;
+  line-height: 1.2;
 
   &:focus {
     border-color: #6a98b8;

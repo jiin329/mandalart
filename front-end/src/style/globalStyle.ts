@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme.color};
   }
+  
+  textarea {
+    font-family: Arial, sans-serif;  
+  }
 `;
 
 export default GlobalStyle;

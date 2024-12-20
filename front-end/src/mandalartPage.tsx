@@ -34,6 +34,7 @@ const MandalartPage: React.FC = () => {
               <Grid key={"grid_" + gridIndex}>
                 <MandalartGrid
                   cells={cells}
+                  isCenter={gridIndex === 4 || false}
                   onCellChange={(cellIndex: number, value: string) =>
                     handleCellChange(gridIndex, cellIndex, value)
                   }
