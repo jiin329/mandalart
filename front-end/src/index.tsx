@@ -74,7 +74,7 @@ const MainContainer = styled.div`
 const ButtonContainer = styled.div`
   display: flex; /*자식 요소 배치 정의*/
   justify-content: flex-end; /*오른쪽 끝으로 정렬*/
-  padding: 20px 30px 0px 0px;
+  padding: 3% 2% 0 0;
 `;
 
 const KakaoLoginButton = styled.button`
@@ -97,7 +97,7 @@ const KakaoLoginButton = styled.button`
 const ThemeButton = styled.button`
   border: 1px solid rgba(230, 230, 230, 0.7);
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 28px;
+  border-radius: 8px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   padding: 10;

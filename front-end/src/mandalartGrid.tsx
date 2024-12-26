@@ -12,29 +12,29 @@ const MandalartGrid: React.FC<MandalartGridProps> = ({
   cells,
   onCellChange,
   isCenter = false,
-}) => (
-  <>
-    {cells.map((cell, index) => {
-      const CellComponent = isCenter && index === 4 ? CenterCell : Cell;
-      return (
-        <CellComponent
-          key={"cell_" + index}
-          value={cell}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-            onCellChange(index, e.target.value)
-          }
-          placeholder={
-            isCenter && index === 4 ? "중심 목표" : `목표 ${index + 1}`
-          }
-          theme={undefined}
-        />
-      );
-    })}
-  </>
-);
-
+}) => {
+  return (
+    <>
+      {cells.map((cell, index) => {
+        const CellComponent = isCenter && index === 4 ? CenterCell : Cell;
+        return (
+          <CellComponent
+            key={"cell_" + index}
+            value={cell}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              onCellChange(index, e.target.value)
+            }
+            placeholder={
+              isCenter && index === 4 ? "중심 목표" : `목표 ${index + 1}`
+            }
+            theme={undefined}
+          />
+        );
+      })}
+    </>
+  );
+};
 const Cell = styled.textarea<{ theme: any }>`
-  display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
@@ -63,6 +63,8 @@ const Cell = styled.textarea<{ theme: any }>`
   &::placeholder {
     color: #aaa;
   }
+  padding-top: calc(50% - 0.6em); /* 텍스트 높이의 절반을 빼서 중앙 정렬 */
+  padding-bottom: calc(50% - 0.6em); /* 텍스트 높이의 절반을 빼서 중앙 정렬 */
 `;
 
 const CenterCell = styled(Cell)`
