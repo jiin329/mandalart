@@ -72,8 +72,8 @@ const Grid = styled.div<{ isCenter?: boolean }>`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 5px;
-  width: 100%; // 부모의 너비에 맞춤
-  height: 100%; // 부모의 높이에 맞춤
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
 `;
 
