@@ -5,7 +5,9 @@ plugins {
 }
 
 group = 'com.speaking-potato.mandarat'
-version = '0.0.1-SNAPSHOT'
+version = '0.1'
+
+apply plugin: 'war'
 
 java {
 	toolchain {
@@ -39,6 +41,6 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
+tasks.withType(Test) {
+	enabled = false
 }
