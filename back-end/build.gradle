@@ -9,6 +9,10 @@ version = '0.1'
 
 apply plugin: 'war'
 
+war {
+    archiveFileName = "mandalart.war"
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
